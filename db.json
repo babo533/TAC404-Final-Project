@@ -1,0 +1,172 @@
+{
+  "players": [
+    {
+      "id": 1,
+      "name": "Seung Hoon Lee",
+      "position": "Forward",
+      "joinedDate": "2024-01-15"
+    },
+    {
+      "name": "Corey Kim",
+      "position": "Striker",
+      "joinedDate": "2025-12-05",
+      "id": 3
+    }
+  ],
+  "skills": [
+    {
+      "id": 1,
+      "name": "Shooting",
+      "description": "Goal scoring and finishing",
+      "icon": ""
+    },
+    {
+      "id": 2,
+      "name": "Dribbling",
+      "description": "Ball control and movement",
+      "icon": ""
+    },
+    {
+      "id": 3,
+      "name": "Passing",
+      "description": "Distribution and accuracy",
+      "icon": ""
+    },
+    {
+      "id": 4,
+      "name": "Defense",
+      "description": "Tackling and positioning",
+      "icon": ""
+    },
+    {
+      "id": 5,
+      "name": "Fitness",
+      "description": "Stamina and conditioning",
+      "icon": ""
+    }
+  ],
+  "games": [
+    {
+      "id": 1,
+      "playerId": 1,
+      "date": "2024-11-25",
+      "opponent": "Red Lions FC",
+      "location": "Home",
+      "result": "Win",
+      "position": "Striker",
+      "duration": 90,
+      "goals": 2,
+      "assists": 1,
+      "passes": 24,
+      "notes": "Great team effort. Felt sharp in front of goal.",
+      "completed": true
+    },
+    {
+      "id": 2,
+      "playerId": 1,
+      "date": "2024-12-02",
+      "opponent": "Blue Sharks",
+      "location": "Away",
+      "result": "Draw",
+      "position": "Winger",
+      "duration": 85,
+      "goals": 0,
+      "assists": 2,
+      "passes": 35,
+      "notes": "Tough game, pitch was slippery.",
+      "completed": true
+    },
+    {
+      "id": 3,
+      "playerId": 1,
+      "date": "2025-12-05",
+      "opponent": "Arsenal",
+      "location": "Home",
+      "result": "Win",
+      "position": "Striker",
+      "duration": 90,
+      "goals": 0,
+      "assists": 0,
+      "passes": 23,
+      "notes": "",
+      "completed": true
+    },
+    {
+      "date": "2025-12-01",
+      "opponent": "Chelsea",
+      "location": "Home",
+      "result": "Win",
+      "position": "Striker",
+      "duration": 90,
+      "goals": 4,
+      "assists": 0,
+      "passes": 20,
+      "notes": "",
+      "completed": true,
+      "playerId": 3,
+      "id": 5
+    }
+  ],
+  "goals": [
+    {
+      "id": 1,
+      "playerId": 1,
+      "title": "Score 15 Goals this Season",
+      "skillId": 1,
+      "targetValue": 15,
+      "currentValue": 15,
+      "deadline": "2024-12-31",
+      "completed": true,
+      "createdAt": "2024-11-01"
+    },
+    {
+      "id": 2,
+      "playerId": 1,
+      "title": "Maintain 90% Passing Accuracy",
+      "skillId": 3,
+      "targetValue": 10,
+      "currentValue": 8,
+      "deadline": "2024-12-15",
+      "completed": false,
+      "createdAt": "2024-11-10"
+    },
+    {
+      "id": 3,
+      "playerId": 1,
+      "title": "Assist 5 Times",
+      "skillId": null,
+      "targetValue": 5,
+      "currentValue": 0,
+      "deadline": "2026-01-01",
+      "completed": false,
+      "createdAt": "2025-12-05"
+    },
+    {
+      "playerId": 3,
+      "title": "Score 15 goals",
+      "skillId": null,
+      "targetValue": 15,
+      "currentValue": 2,
+      "deadline": "2026-01-01",
+      "completed": false,
+      "createdAt": "2025-12-05",
+      "id": 5
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "gameId": 1,
+      "author": "Coach Mike",
+      "body": "Clinical finishing today, Alex!",
+      "timestamp": "2024-11-25T12:30:00.000Z"
+    },
+    {
+      "gameId": 3,
+      "author": "Seung Hoon Lee",
+      "body": "Nice Game!",
+      "timestamp": "2025-12-05T23:54:36.019Z",
+      "id": 2
+    }
+  ]
+}
