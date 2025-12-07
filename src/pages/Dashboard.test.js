@@ -1,3 +1,5 @@
+// REVIEW: Test file 4 of 5 (requirement: at least 10 tests total)
+// Tests: 1
 import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';

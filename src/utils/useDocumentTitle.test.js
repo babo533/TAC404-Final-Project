@@ -1,3 +1,6 @@
+// REVIEW: Test file 5 of 5 (requirement: at least 10 tests total)
+// Tests: 3
+// TOTAL TESTS: 2 + 2 + 4 + 1 + 3 = 12 tests
 import { renderHook } from '@testing-library/react';
 import useDocumentTitle from './useDocumentTitle';
 

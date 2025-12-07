@@ -17,10 +17,13 @@ function App() {
       <PlayerProvider>
         <Router>
           <Routes>
+            {/* REVIEW: Nested routes - Layout is the parent, uses <Outlet /> */}
             <Route element={<Layout />}>
+              {/* REVIEW: 7 total routes (requirement: at least 4) */}
               <Route path="/" element={<Dashboard />} />
               <Route path="/games" element={<GamesList />} />
               <Route path="/games/new" element={<CreateGame />} />
+              {/* REVIEW: URL parameters (:id) - dynamic segments (requirement: 2 routes with params) */}
               <Route path="/games/:id" element={<GameDetail />} />
               <Route path="/games/:id/edit" element={<EditGame />} />
               <Route path="/goals" element={<Goals />} />

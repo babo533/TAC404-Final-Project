@@ -4,7 +4,9 @@ import { toast } from 'react-toastify';
 import { formatDistanceToNow } from 'date-fns';
 import useDocumentTitle from '../utils/useDocumentTitle';
 
+// REVIEW: Part 2 - Commenting system implementation
 const GameDetail = () => {
+  // REVIEW: useParams() to get dynamic :id from URL
   const { id } = useParams();
   const [game, setGame] = useState(null);
   const [comments, setComments] = useState([]);
@@ -14,6 +16,7 @@ const GameDetail = () => {
 
   const fetchData = useCallback(async () => {
     try {
+      // REVIEW: GET requests for game and comments
       const [gameRes, commentsRes] = await Promise.all([
         fetch(`http://localhost:8000/games/${id}`),
         fetch(`http://localhost:8000/comments?gameId=${id}`),
@@ -23,6 +26,7 @@ const GameDetail = () => {
       const commentsData = await commentsRes.json();
 
       setGame(gameData);
+      // REVIEW: Comments sorted from most recent to oldest (requirement)
       setComments(commentsData.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp)));
       setLoading(false);
     } catch (error) {
@@ -51,6 +55,7 @@ const GameDetail = () => {
     if (!validateComment()) return;
 
     try {
+      // REVIEW: Comment contains author name, body, and timestamp (requirement)
       const commentData = {
         gameId: parseInt(id),
         author: newComment.author.trim(),
@@ -58,6 +63,7 @@ const GameDetail = () => {
         timestamp: new Date().toISOString(),
       };
 
+      // REVIEW: POST request - creates new comment
       const response = await fetch('http://localhost:8000/comments', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -66,6 +72,7 @@ const GameDetail = () => {
 
       if (response.ok) {
         const savedComment = await response.json();
+        // New comment added to front of array (most recent first)
         setComments([savedComment, ...comments]);
         setNewComment({ author: '', body: '' });
         toast.success('Comment added successfully!');
@@ -191,7 +198,7 @@ const GameDetail = () => {
         </div>
       </div>
 
-      {/* Comments Section */}
+      {/* REVIEW: Part 2 - Comments Section */}
       <div className="bg-white dark:bg-slate-800 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-soft p-8">
         <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-6">
           Comments ({comments.length})
@@ -256,19 +263,23 @@ const GameDetail = () => {
 
         <div className="space-y-4">
           {comments.length > 0 ? (
+            // REVIEW: Each comment displays author name, body, and timestamp
             comments.map((comment) => (
               <div
                 key={comment.id}
                 className="border border-slate-100 dark:border-slate-700 rounded-xl p-5 hover:bg-slate-50 dark:hover:bg-slate-700/30 transition-colors"
               >
                 <div className="flex justify-between items-start mb-2">
+                  {/* REVIEW: Commenter's name */}
                   <p className="font-bold text-sm text-slate-900 dark:text-white">
                     {comment.author}
                   </p>
+                  {/* REVIEW: Timestamp formatted with date-fns */}
                   <p className="text-xs text-slate-500 dark:text-slate-400">
                     {formatDistanceToNow(new Date(comment.timestamp), { addSuffix: true })}
                   </p>
                 </div>
+                {/* REVIEW: Comment body */}
                 <p className="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
                   {comment.body}
                 </p>

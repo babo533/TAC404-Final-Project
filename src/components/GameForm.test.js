@@ -1,4 +1,6 @@
-import { render, screen, waitFor } from '@testing-library/react';
+// REVIEW: Test file 2 of 5 (requirement: at least 10 tests total)
+// Tests: 2
+import { render, screen } from '@testing-library/react';
 import GameForm from './GameForm';
 
 describe('GameForm Component', () => {

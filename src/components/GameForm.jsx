@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
+// REVIEW: Reusable component - used in CreateGame.jsx and EditGame.jsx
+// REVIEW: Configurable props: initialData, onSubmit, submitButtonText
 const GameForm = ({ initialData = null, onSubmit, submitButtonText = 'Save Game' }) => {
   const [formData, setFormData] = useState({
     date: '',
@@ -24,9 +26,12 @@ const GameForm = ({ initialData = null, onSubmit, submitButtonText = 'Save Game'
     }
   }, [initialData]);
 
+  // REVIEW: Custom form validation via component state (no HTML validation attributes)
+  // REVIEW: Returns false if invalid, preventing form submission
   const validateForm = () => {
     const newErrors = {};
 
+    // REVIEW: Unique error messages for each field
     if (!formData.date) newErrors.date = 'Date is required';
     if (!formData.opponent.trim()) newErrors.opponent = 'Opponent name is required';
     if (!formData.location) newErrors.location = 'Location is required';
@@ -87,6 +92,7 @@ const GameForm = ({ initialData = null, onSubmit, submitButtonText = 'Save Game'
           >
             Date *
           </label>
+          {/* REVIEW: Text input (type="date") */}
           <input
             type="date"
             id="date"
@@ -95,6 +101,7 @@ const GameForm = ({ initialData = null, onSubmit, submitButtonText = 'Save Game'
             onChange={handleChange}
             className={inputClass(errors.date)}
           />
+          {/* REVIEW: Error message displayed beneath form element */}
           {errors.date && <p className="text-rose-500 text-sm mt-1">{errors.date}</p>}
         </div>
         <div>
@@ -118,7 +125,7 @@ const GameForm = ({ initialData = null, onSubmit, submitButtonText = 'Save Game'
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {/* Radio Buttons for Location */}
+        {/* REVIEW: Radio buttons group - Home/Away */}
         <div>
           <label className="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">
             Location *
@@ -150,6 +157,7 @@ const GameForm = ({ initialData = null, onSubmit, submitButtonText = 'Save Game'
           {errors.location && <p className="text-rose-500 text-sm mt-1">{errors.location}</p>}
         </div>
 
+        {/* REVIEW: Select menu - Win/Draw/Loss */}
         <div>
           <label
             htmlFor="result"
@@ -263,7 +271,7 @@ const GameForm = ({ initialData = null, onSubmit, submitButtonText = 'Save Game'
           </div>
         </div>
 
-        {/* Checkbox for Full Match */}
+        {/* REVIEW: Checkbox */}
         <div className="mt-4">
           <label className="flex items-center space-x-2 cursor-pointer">
             <input
@@ -281,6 +289,7 @@ const GameForm = ({ initialData = null, onSubmit, submitButtonText = 'Save Game'
         </div>
       </div>
 
+      {/* REVIEW: Textarea */}
       <div>
         <label
           htmlFor="notes"

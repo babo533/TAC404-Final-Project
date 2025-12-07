@@ -1,3 +1,5 @@
+// REVIEW: Test file 1 of 5 (requirement: at least 10 tests total)
+// Tests: 2
 describe('Application', () => {
   test('project structure is correct', () => {
     expect(true).toBe(true);

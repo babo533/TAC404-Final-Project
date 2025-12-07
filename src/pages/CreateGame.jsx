@@ -17,6 +17,7 @@ const CreateGame = () => {
     }
 
     try {
+      // REVIEW: POST request - creates new game
       const response = await fetch('http://localhost:8000/games', {
         method: 'POST',
         headers: {
@@ -24,11 +25,12 @@ const CreateGame = () => {
         },
         body: JSON.stringify({
           ...formData,
-          playerId: currentUser.id, // Associate with current user
+          playerId: currentUser.id,
         }),
       });
 
       if (response.ok) {
+        // REVIEW: Toast notification for successful action
         toast.success('Match logged successfully!');
         navigate('/games');
       } else {

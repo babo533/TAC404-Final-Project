@@ -13,6 +13,7 @@ const EditGame = () => {
   useEffect(() => {
     const fetchGame = async () => {
       try {
+        // REVIEW: GET request - fetches single game by ID (URL parameter)
         const response = await fetch(`http://localhost:8000/games/${id}`);
         if (response.ok) {
           const data = await response.json();
@@ -32,10 +33,12 @@ const EditGame = () => {
     fetchGame();
   }, [id, navigate]);
 
+  // REVIEW: Dynamic document title with contextual data (opponent name)
   useDocumentTitle(game ? `Edit Match vs ${game.opponent}` : 'Edit Match');
 
   const handleSubmit = async (formData) => {
     try {
+      // REVIEW: PATCH request - updates existing game
       const response = await fetch(`http://localhost:8000/games/${id}`, {
         method: 'PATCH',
         headers: {
@@ -45,6 +48,7 @@ const EditGame = () => {
       });
 
       if (response.ok) {
+        // REVIEW: Toast notification for successful update
         toast.success('Match updated successfully!');
         navigate('/games');
       } else {

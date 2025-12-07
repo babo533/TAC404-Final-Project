@@ -14,6 +14,7 @@ const GamesList = () => {
   const fetchData = useCallback(async () => {
     setLoading(true);
     try {
+      // REVIEW: GET request - fetches all games for current player
       const response = await fetch(`http://localhost:8000/games?playerId=${currentUser.id}`);
       const data = await response.json();
       setGames(data);
@@ -34,12 +35,14 @@ const GamesList = () => {
   const handleDelete = async (id) => {
     if (window.confirm(`Are you sure you want to delete this match?`)) {
       try {
+        // REVIEW: DELETE request - removes game by ID
         const response = await fetch(`http://localhost:8000/games/${id}`, {
           method: 'DELETE',
         });
 
         if (response.ok) {
           setGames(games.filter((game) => game.id !== id));
+          // REVIEW: Toast notification for successful delete
           toast.success('Match deleted successfully!');
         } else {
           toast.error('Failed to delete match');

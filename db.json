@@ -11,6 +11,12 @@
       "position": "Striker",
       "joinedDate": "2025-12-05",
       "id": 3
+    },
+    {
+      "name": "Test User",
+      "position": "Striker",
+      "joinedDate": "2025-12-07",
+      "id": 4
     }
   ],
   "skills": [
@@ -62,21 +68,6 @@
       "completed": true
     },
     {
-      "id": 2,
-      "playerId": 1,
-      "date": "2024-12-02",
-      "opponent": "Blue Sharks",
-      "location": "Away",
-      "result": "Draw",
-      "position": "Winger",
-      "duration": 85,
-      "goals": 0,
-      "assists": 2,
-      "passes": 35,
-      "notes": "Tough game, pitch was slippery.",
-      "completed": true
-    },
-    {
       "id": 3,
       "playerId": 1,
       "date": "2025-12-05",
@@ -105,27 +96,48 @@
       "completed": true,
       "playerId": 3,
       "id": 5
+    },
+    {
+      "date": "2025-12-07",
+      "opponent": "Lions",
+      "location": "Away",
+      "result": "Win",
+      "position": "Striker",
+      "duration": 90,
+      "goals": 1,
+      "assists": 0,
+      "passes": 35,
+      "notes": "",
+      "completed": true,
+      "playedFullMatch": true,
+      "playerId": 4,
+      "id": 7
+    },
+    {
+      "date": "2026-01-01",
+      "opponent": "Leeds",
+      "location": "Home",
+      "result": "Win",
+      "position": "Striker",
+      "duration": 90,
+      "goals": 1,
+      "assists": 0,
+      "passes": 0,
+      "notes": "",
+      "completed": true,
+      "playedFullMatch": true,
+      "playerId": 1,
+      "id": 8
     }
   ],
   "goals": [
-    {
-      "id": 1,
-      "playerId": 1,
-      "title": "Score 15 Goals this Season",
-      "skillId": 1,
-      "targetValue": 15,
-      "currentValue": 15,
-      "deadline": "2024-12-31",
-      "completed": true,
-      "createdAt": "2024-11-01"
-    },
     {
       "id": 2,
       "playerId": 1,
       "title": "Maintain 90% Passing Accuracy",
       "skillId": 3,
       "targetValue": 10,
-      "currentValue": 8,
+      "currentValue": 0,
       "deadline": "2024-12-15",
       "completed": false,
       "createdAt": "2024-11-10"
@@ -134,9 +146,8 @@
       "id": 3,
       "playerId": 1,
       "title": "Assist 5 Times",
-      "skillId": null,
       "targetValue": 5,
-      "currentValue": 0,
+      "currentValue": 3,
       "deadline": "2026-01-01",
       "completed": false,
       "createdAt": "2025-12-05"
@@ -144,13 +155,43 @@
     {
       "playerId": 3,
       "title": "Score 15 goals",
-      "skillId": null,
       "targetValue": 15,
       "currentValue": 2,
       "deadline": "2026-01-01",
       "completed": false,
       "createdAt": "2025-12-05",
       "id": 5
+    },
+    {
+      "playerId": 1,
+      "title": "3 Tackles in One Game",
+      "targetValue": 3,
+      "currentValue": 3,
+      "deadline": "2026-01-01",
+      "completed": false,
+      "createdAt": "2025-12-07",
+      "id": 6
+    },
+    {
+      "playerId": 4,
+      "title": "Score 12 goals",
+      "targetValue": 12,
+      "currentValue": 5,
+      "deadline": "2026-01-01",
+      "completed": false,
+      "createdAt": "2025-12-07",
+      "id": 7
+    },
+    {
+      "playerId": 1,
+      "title": "10 Tackles",
+      "skillId": null,
+      "targetValue": 1,
+      "currentValue": 1,
+      "deadline": "2026-01-01",
+      "completed": true,
+      "createdAt": "2025-12-07",
+      "id": 8
     }
   ],
   "comments": [
@@ -167,6 +208,13 @@
       "body": "Nice Game!",
       "timestamp": "2025-12-05T23:54:36.019Z",
       "id": 2
+    },
+    {
+      "gameId": 8,
+      "author": "Hoon",
+      "body": "Great Match!",
+      "timestamp": "2025-12-07T22:48:05.385Z",
+      "id": 3
     }
   ]
 }

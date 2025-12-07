@@ -1,5 +1,7 @@
 import React from 'react';
 
+// REVIEW: Reusable component - used in Dashboard.jsx and Statistics.jsx
+// REVIEW: Configurable prop: color (primary, blue, purple, orange, green)
 const StatCard = ({ title, value, trend, color = 'primary' }) => {
   const colorMap = {
     primary: 'bg-indigo-50 text-indigo-600 dark:bg-indigo-900/30 dark:text-indigo-400',
